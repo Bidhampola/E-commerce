@@ -6,12 +6,8 @@ function App() {
   return (
     <>
       <Navbar/>
-
       <h4 className="text-center mt-5 text-red-500">SHOP WITH US</h4>
-
       <Product/>
-
-
       <Footer/>
     </>
   )
