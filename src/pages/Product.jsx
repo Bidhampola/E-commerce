@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Navbar from '../navigations/Navbar'
+import Footer from '../navigations/Footer'
 
 export default function Product() {
     const [loading,setLoading] = useState(true)
@@ -13,6 +15,8 @@ export default function Product() {
     })
   return (
     <>
+    <Navbar/>
+    
         {loading ? 'Loading' : 
         <div className='flex flex-wrap justify-center'>
            {products.map((product,index)=>{
@@ -21,13 +25,15 @@ export default function Product() {
                     <h3 className='text-center mt-5'><b>{(product.title.length > 30) ? product.title.slice(0,30) : product.title}</b></h3>
                         <img src={product.image} alt="product-image" className='w-full h-48 object-cover'/>
                     <p className='text-center text-red-700 mt-5'><b>Price: ${product.price}</b></p>
-                    <button className='bg-red-500 text-white border-gray-500 p-1'>Add to Cart</button>
+                    <button className='bg-red-500 text-white border-gray-500 px-10 py-1 rounded-md'>Add to Cart</button>
 
                 </div>
             )
            })}
         </div>
         }
+
+        <Footer/>
     </>
   )
 }
